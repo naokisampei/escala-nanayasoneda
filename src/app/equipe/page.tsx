@@ -150,11 +150,11 @@ export default function Equipe() {
       )}
 
       {carregando ? (
-        <p className="text-neutral-600">Carregando...</p>
+        <p className="texto-fundo">Carregando...</p>
       ) : (
         <>
           <section className="space-y-3">
-            {ativos.length === 0 && <p className="text-neutral-600">Nenhum funcionário ativo.</p>}
+            {ativos.length === 0 && <p className="texto-fundo">Nenhum funcionário ativo.</p>}
             {ativos.map((f) => (
               <div key={f.id} className="cartao">
                 <p className="text-lg font-semibold">{f.nome}</p>
@@ -189,7 +189,7 @@ export default function Equipe() {
 
           {inativos.length > 0 && (
             <section className="space-y-3">
-              <h2 className="text-lg font-semibold text-neutral-600">Desativados</h2>
+              <h2 className="texto-fundo text-lg font-semibold">Desativados</h2>
               {inativos.map((f) => (
                 <div key={f.id} className="cartao flex items-center justify-between gap-3 opacity-70">
                   <div>

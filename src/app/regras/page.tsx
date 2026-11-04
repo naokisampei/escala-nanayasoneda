@@ -151,7 +151,7 @@ export default function RegrasDaCasa() {
   return (
     <div className="space-y-5">
       <h1 className="text-2xl font-bold">Regras da casa</h1>
-      <p className="text-neutral-700">
+      <p className="texto-fundo">
         Estas regras geram os alertas em vermelho na Escala da semana.
       </p>
 
@@ -238,7 +238,7 @@ export default function RegrasDaCasa() {
       )}
 
       {carregando ? (
-        <p className="text-neutral-600">Carregando...</p>
+        <p className="texto-fundo">Carregando...</p>
       ) : (
         <>
           <section className="cartao space-y-4">
@@ -287,7 +287,7 @@ export default function RegrasDaCasa() {
               )}
             </div>
             {regrasOrdenadas.length === 0 && (
-              <p className="text-neutral-600">Nenhum mínimo cadastrado.</p>
+              <p className="texto-fundo">Nenhum mínimo cadastrado.</p>
             )}
             {regrasOrdenadas.map((r) => (
               <div key={r.id} className="cartao">

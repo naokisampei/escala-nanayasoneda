@@ -199,7 +199,7 @@ export default function EscalaDaSemana() {
         </div>
       )}
 
-      <p className="text-sm text-neutral-600">
+      <p className="texto-fundo text-sm">
         Toque em uma célula para escolher quem trabalha. Arraste a grade para os lados para ver
         todos os dias.
       </p>
@@ -212,7 +212,7 @@ export default function EscalaDaSemana() {
               {dias.map((d) => (
                 <th
                   key={d}
-                  className={`border-b p-2 text-center ${d === hoje ? "bg-secundaria" : ""}`}
+                  className={`border-b p-2 text-center ${d === hoje ? "bg-neutral-100" : ""}`}
                 >
                   {rotuloDia(d)}
                 </th>
@@ -258,7 +258,7 @@ export default function EscalaDaSemana() {
                                 <span
                                   key={id}
                                   className={`w-full rounded-md px-2 py-1 font-medium ${
-                                    vermelho ? "bg-red-100 text-red-800" : "bg-secundaria"
+                                    vermelho ? "bg-red-100 text-red-800" : "bg-neutral-100"
                                   }`}
                                 >
                                   {vermelho && "⚠ "}
@@ -296,7 +296,7 @@ export default function EscalaDaSemana() {
           onClick={() => setCelula(null)}
         >
           <div
-            className="flex max-h-[85vh] w-full max-w-md flex-col rounded-t-2xl bg-white p-4 shadow-lg sm:rounded-2xl"
+            className="painel flex max-h-[85vh] w-full max-w-md flex-col rounded-t-2xl bg-white p-4 shadow-lg sm:rounded-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className="text-lg font-bold">
@@ -320,7 +320,7 @@ export default function EscalaDaSemana() {
                   <label
                     key={f.id}
                     className={`flex min-h-14 cursor-pointer items-center gap-3 rounded-xl border px-3 py-2 ${
-                      marcado ? "border-principal bg-secundaria" : "border-neutral-200"
+                      marcado ? "border-principal bg-neutral-100" : "border-neutral-200"
                     }`}
                   >
                     <input

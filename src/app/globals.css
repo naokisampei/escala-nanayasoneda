@@ -2,9 +2,13 @@
 
 /* Cores vêm de src/config/identidade.ts e são aplicadas no layout. */
 :root {
-  --cor-principal: #1f3a5f;
-  --cor-secundaria: #f4f1ea;
-  --cor-texto: #1a1a1a;
+  --cor-principal: #000000;
+  --cor-secundaria: #303030;
+  /* Texto dentro de cartões (fundo branco) */
+  --cor-texto: #141414;
+  /* Texto direto sobre o fundo escuro */
+  --cor-texto-fundo: #f5f5f5;
+  --cor-texto-fundo-suave: #c9c9c9;
 }
 
 @theme inline {
@@ -15,25 +19,44 @@
 html,
 body {
   background: var(--cor-secundaria);
-  color: var(--cor-texto);
+  color: var(--cor-texto-fundo);
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
 
+h1 {
+  letter-spacing: -0.01em;
+}
+
+/* Texto secundário sobre o fundo escuro (avisos, rodapé) */
+.texto-fundo {
+  color: var(--cor-texto-fundo-suave);
+}
+
 /* Botões e campos grandes, pensados para o celular. */
 .botao {
-  @apply inline-flex items-center justify-center rounded-xl px-4 py-3 text-base font-semibold text-white shadow-sm active:scale-[0.98] disabled:opacity-50;
+  @apply inline-flex items-center justify-center rounded-xl border px-4 py-3 text-base font-semibold text-white shadow-sm transition active:scale-[0.98] disabled:opacity-50;
   background: var(--cor-principal);
+  border-color: rgb(255 255 255 / 0.25);
 }
 .botao-secundario {
-  @apply inline-flex items-center justify-center rounded-xl border px-4 py-3 text-base font-semibold shadow-sm active:scale-[0.98] disabled:opacity-50;
+  @apply inline-flex items-center justify-center rounded-xl border-2 px-4 py-3 text-base font-semibold shadow-sm transition active:scale-[0.98] active:bg-neutral-100 disabled:opacity-50;
   border-color: var(--cor-principal);
   color: var(--cor-principal);
   background: white;
 }
 .campo {
-  @apply w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base outline-none focus:border-neutral-500;
+  @apply w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base outline-none transition focus:ring-2 focus:ring-black/15;
+  color: var(--cor-texto);
 }
+.campo:focus {
+  border-color: var(--cor-principal);
+}
+/* Cartões e painéis são brancos, com texto escuro. */
 .cartao {
-  @apply rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm;
+  @apply rounded-2xl bg-white p-5 shadow-md;
+  color: var(--cor-texto);
+}
+.painel {
+  color: var(--cor-texto);
 }

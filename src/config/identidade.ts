@@ -3,11 +3,11 @@
 // public/logo.png (ou deixe logo como null para mostrar só o nome).
 
 export const identidade = {
-  nome: "NaNaYa Soneda",
+  nome: "NaNaYa Rooftop Soneda",
   // Cor dos botões e do cabeçalho (formato #RRGGBB)
-  corPrincipal: "#1F3A5F",
+  corPrincipal: "#000000",
   // Cor de fundo das páginas
-  corSecundaria: "#F4F1EA",
+  corSecundaria: "#303030",
   // Caminho do logo dentro da pasta public, ou null
-  logo: null as string | null,
+  logo: "/nanaya-logo.png" as string | null,
 };
